@@ -1,0 +1,26 @@
+[
+    {
+        "slug": "fantashop",
+        "title": "Fantashop",
+        "description": "Le fantashop est un market dédier au serveur pvp faction moddé Paladium",
+        "img": "../../public/projects-img/fts.webp",
+        "stack": ["React", "Styled-Components"],
+        "link": ""
+    },
+    {
+        "slug": "byoss-me",
+        "title": "Byoss.me",
+        "description": "Byoss.me est un réseau social pour les professionnels ou particuliers dans le style de Linkedin",
+        "img": "../../public/projects-img/byoss.webp",
+        "stack": ["React", "Tailwind", "Scss"],
+        "link": ""
+    },
+    {
+        "slug": "my-blog",
+        "title": "My Blog",
+        "description": "My blog est un petit blog fictif qui a pour but d'ajouter plusieurs articles que tous les utilisateurs peuvent ensuite consulter",
+        "img": "../../public/projects-img/my-blog.webp",
+        "stack": ["React", "Stitches", "Express", "MongoDB"],
+        "link": ""
+    }
+]
