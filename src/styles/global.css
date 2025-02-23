@@ -5,12 +5,17 @@
 
 @theme {
   --color-primary: #fff;
+  --color-secondary: oklch(0.707 0.022 261.325);
+  --color-tertiary: oklch(0.541 0.281 293.009);
+  --color-accent: #050315;
+  --color-accent-purple: rgb(188, 57, 255);
 
   --font-title: Ubuntu, sans-serif;
 }
 
 html {
   font-family: "Montserrat", sans-serif;
+  list-style: none;
 }
 
 body {

@@ -1,0 +1,45 @@
+---
+import projects from "../../db/data.json";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+const pageTitle = "Ewen Halgand • Portfolio";
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}
+
+const { title, description, stack, img, link } = Astro.props;
+---
+
+<Layout pageTitle={pageTitle}>
+  <section class="flex flex-col gap-20 mt-20 mb-20">
+    <div class="text-primary flex items-center gap-2">
+      <a href="/" class="text-tertiary underline decoration-solid">Accueil</a>
+      <svg class="size-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path class="fill-white" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256L73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+      </svg>
+      <span class="font-semibold">{title}</span>
+    </div>
+    <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
+      <img class="w-full rounded-lg shadow-md border-2 border-primary md:w-4xl" src=`${img}` alt="project image" />
+      <div class="flex flex-col gap-20 lg:gap-0 md:justify-between">
+        <div class="flex flex-col gap-3">
+          <h2 class="text-accent-purple font-bold uppercase text-xl">{title}</h2>
+          <p class="text-primary font-medium">{description}</p>
+        </div>
+        <div class="flex flex-col gap-3 items-end">
+          <h2 class="text-accent-purple font-bold uppercase text-xl">Téchnologies utilisées</h2>
+          <ul class="flex gap-2.5">
+            {stack.map((tech) => <li class="text-primary font-medium underline decoration-solid">{tech}</li>)}
+          </ul>
+        </div>
+          <li class="flex gap-4">
+            <a href=`${link}` class="text-primary bg-accent-purple text-sm font-medium p-2 rounded-sm">Voir le Github</a>
+          </li>
+      </div>
+    </div>
+  </section>
+</Layout>
