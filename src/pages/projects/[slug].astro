@@ -33,11 +33,11 @@ const { title, description, stack, img, link } = Astro.props;
         <div class="flex flex-col gap-3 items-end">
           <h2 class="text-accent-purple font-bold uppercase text-xl">Téchnologies utilisées</h2>
           <ul class="flex gap-2.5">
-            {stack.map((tech) => <li class="text-primary font-medium underline decoration-solid">{tech}</li>)}
+            {stack.map((tech) => <li class="text-secondary font-medium underline decoration-solid">{tech}</li>)}
           </ul>
         </div>
           <li class="flex gap-4">
-            <a href=`${link}` class="text-primary bg-accent-purple text-sm font-medium p-2 rounded-sm">Voir le Github</a>
+            <a href=`${link}` target="_blank" class="text-primary bg-accent-purple text-sm font-medium p-2 rounded-sm">Voir le Github</a>
           </li>
       </div>
     </div>

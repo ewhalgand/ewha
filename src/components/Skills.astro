@@ -1,0 +1,17 @@
+---
+const skills = [
+    "Html",
+    "Css",
+    "Scss",
+    "Tailwind",
+    "JavaScript",
+    "TypeScript",
+    "AstroJS",
+]
+---
+<section class="flex flex-col gap-14 text-center mb-44">
+    <h1 class="text-primary text-3xl font-bold font-title">Skills</h1>
+    <ul class="flex flex-wrap justify-center gap-4 m-auto font-semibold text-lg text-secondary underline decoration-solid">
+        {skills.map(skill => <li>{skill}</li>)}
+    </ul>
+</section>
