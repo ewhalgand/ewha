@@ -17,6 +17,6 @@ export function urlFor(source: string) {
 
 export async function getProjets() {
   const query = '*[_type == "project"]';
-  const projets = client.listen(query).subscribe;
+  const projets = await client.fetch(query);
   return projets;
 }
