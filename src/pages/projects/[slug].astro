@@ -1,17 +1,30 @@
 ---
-import projects from "../../db/data.json";
+interface Project {
+  title: string;
+  slug: {
+    current: string,
+  };
+  description: string;
+  image: string;
+  url: string;
+}
+
+import { getProjets } from '../../lib/sanityClient';
+import { urlFor } from '../../lib/sanityClient';
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 const pageTitle = "Ewen Halgand • Portfolio";
 
 export async function getStaticPaths() {
-  return projects.map((project) => ({
-    params: { slug: project.slug },
+  const projects = await getProjets();
+
+  return projects.map((project: Project) => ({
+    params: { slug: project.slug.current },
     props: project,
   }));
 }
 
-const { title, description, stack, img, link } = Astro.props;
+const { title, description, stack, image, url } = Astro.props;
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -24,7 +37,7 @@ const { title, description, stack, img, link } = Astro.props;
       <span class="font-semibold">{title}</span>
     </div>
     <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
-      <img class="w-full rounded-lg shadow-md border-2 border-primary md:w-4xl" src=`${img}` alt="project image" />
+      <img class="w-full rounded-lg shadow-md border-2 border-primary md:w-4xl" src=`${urlFor(image).url()}` alt="project image" />
       <div class="flex flex-col gap-20 lg:gap-0 md:justify-between">
         <div class="flex flex-col gap-3">
           <h2 class="text-accent-purple font-bold uppercase text-xl">{title}</h2>
@@ -33,11 +46,11 @@ const { title, description, stack, img, link } = Astro.props;
         <div class="flex flex-col gap-3 items-end">
           <h2 class="text-accent-purple font-bold uppercase text-xl">Téchnologies utilisées</h2>
           <ul class="flex gap-2.5">
-            {stack.map((tech) => <li class="text-secondary font-medium underline decoration-solid">{tech}</li>)}
+            {(stack as string[]).map((tech) => <li class="text-secondary font-medium underline decoration-solid">{tech}</li>)}
           </ul>
         </div>
           <li class="flex gap-4">
-            <a href=`${link}` target="_blank" class="text-primary bg-accent-purple text-sm font-medium p-2 rounded-sm">Voir le Github</a>
+            <a href=`${url}` target="_blank" class="text-primary bg-accent-purple text-sm font-medium p-2 rounded-sm">Voir le Github</a>
           </li>
       </div>
     </div>
