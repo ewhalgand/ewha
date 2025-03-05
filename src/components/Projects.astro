@@ -20,7 +20,7 @@ const projects = await getProjets();
 {projects.map((project: Project) => (
     <div class="shadow-md">
       <img
-        class="w-full rounded-t-lg"
+        class="w-full rounded-t-lg h-52 bg-cover bg-center"
         src=`${urlFor(project.image).url()}`
         alt="project image"
       />
