@@ -27,7 +27,7 @@ const projects = await getProjets();
       <div class="bg-primary p-4 rounded-b-lg">
         <h2 class="text-tertiary font-medium mb-3">{project.title}</h2>
         <li class="flex gap-4">
-          <a href=`${project.url}` target="_blank" class="text-accent text-xs font-medium border-2 border-tertiary p-2 rounded-full hover:bg-tertiary hover:text-primary">Voir le Github</a>
+          <a href=`${project.url}` target="_blank" class="text-accent text-xs font-medium border-2 border-tertiary p-2 rounded-full hover:bg-tertiary hover:text-primary">Voir le Projet</a>
           <a href={`/projects/${project.slug.current}`} class="text-accent text-xs font-medium border-2 border-tertiary p-2 rounded-full hover:bg-tertiary hover:text-primary">En savoir plus</a>
         </li>
       </div>
