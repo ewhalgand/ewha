@@ -6,19 +6,24 @@ interface Project {
   };
   image: string;
   url: string;
+  _createdAt: string;
 }
 
 import { getProjets } from '../lib/sanityClient';
 import { urlFor } from '../lib/sanityClient';
 
 const projects = await getProjets();
+
+const filteredProject = projects.sort(
+  (a: any,b: any) => new Date(b._createdAt).getTime() - new Date(a._createdAt).getTime()
+)
 ---
 
 <section
   class="grid grid-cols-1 gap-10 mt-44 mb-44 md:grid-cols-2 lg:grid-cols-3"
 >
-{projects.map((project: Project) => (
-    <div class="shadow-md">
+{filteredProject.map((project: Project) => (
+    <div class="shadow-md" id={project._createdAt}>
       <img
         class="w-full rounded-t-lg"
         src=`${urlFor(project.image).url()}`
