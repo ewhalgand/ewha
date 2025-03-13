@@ -2,23 +2,51 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body class="mx-auto max-w-7xl">
-		<Header />
-		<main class="p-6 md:py-10 md:px-10">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6c00c4" />
+    <meta name="title" content="Ewen HALGAND - Développeur Frontend" />
+    <meta name="author" content="Ewen HALGAND" />
+    <meta property="site_name" content="Ewen HALGAND" />
+    <meta
+      name="description"
+      content="Découvrez à travers mon portfolio qui je suis et ce que je fais."
+    />
+
+    <meta property="og:site_name" content="Ewen HALGAND" />
+    <meta property="og:title" content="Ewen HALGAND - Développeur Frontend" />
+    <meta
+      property="og:description"
+      content="Découvrez à travers mon portfolio qui je suis et ce que je fais."
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Ewen HALGAND - Développeur Frontend"
+    />
+    <meta
+      property="twitter:description"
+      content="Découvrez à travers mon portfolio qui je suis et ce que je fais."
+    />
+
+    <title>{pageTitle}</title>
+  </head>
+  <body class="mx-auto max-w-7xl">
+    <Header />
+    <main class="p-6 md:py-10 md:px-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
