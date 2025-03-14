@@ -13,29 +13,29 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ewen Halgand" />
     <meta name="theme-color" content="#6c00c4" />
-    <meta name="title" content="Ewen Halgand • Portfolio" />
-    <meta name="author" content="Ewen HALGAND" />
-    <meta property="site_name" content="Ewen HALGAND" />
-    <meta
-      name="description"
-      content="Découvrez à travers mon portfolio qui je suis et ce que je fais."
-    />
 
-    <meta property="og:site_name" content="Ewen HALGAND" />
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ewen Halgand • Portfolio" />
     <meta
       property="og:description"
       content="Découvrez à travers mon portfolio qui je suis et ce que je fais."
     />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ewha.fr" />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Ewen Halgand • Portfolio" />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ewen Halgand • Portfolio" />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Découvrez à travers mon portfolio qui je suis et ce que je fais."
     />
+    <meta name="twitter:image" content="https://ewha.fr/favicon.svg" />
+    <meta name="twitter:site" content="@ewha_dev" />
+    <meta name="twitter:creator" content="@ewha_dev" />
 
     <title>{pageTitle}</title>
   </head>
