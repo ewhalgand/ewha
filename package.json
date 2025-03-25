@@ -13,7 +13,7 @@
     "@sanity/image-url": "^1.1.0",
     "@tailwindcss/postcss": "^4.0.7",
     "@tailwindcss/vite": "^4.0.7",
-    "astro": "^5.4.2",
+    "astro": "^5.5.4",
     "astro-icon": "^1.1.5",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.3",
