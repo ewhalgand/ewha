@@ -35,26 +35,11 @@ const filteredProject = projects.sort(
         <li class="flex items-center gap-4">
           <a href={`${project.url}`}
           target="_blank"
-          class="group/btn-hover flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5"
-          >
-          <span class="p-0 group-hover/btn-hover:pr-4 transition-all duration-300">Voir le Projet</span>
+          class="flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5"
+          >Voir le Projet</a>
 
-          <span class="hidden group-hover/btn-hover:block transition duration-300">
-            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l73.4 73.4H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h370.7l-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
-            </svg>
-          </span>
-          </a>
-
-          <a href={`/projects/${project.slug.current}`} class="group/btn-hover flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5">
-
-            <span class="p-0 group-hover/btn-hover:pr-4 transition-all duration-300">En savoir plus</span>
-
-            <span class="hidden group-hover/btn-hover:block transition duration-300">
-              <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-	            <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l73.4 73.4H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h370.7l-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
-            </svg>
-            </span>
+          <a href={`/projects/${project.slug.current}`} class="flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5">
+          En savoir plus
           </a>
         </li>
       </div>
