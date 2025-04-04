@@ -24,7 +24,7 @@ const filteredProject = projects.sort(
   class="grid grid-cols-1 gap-10 mt-44 mb-44 md:grid-cols-2 lg:grid-cols-3"
 >
 {filteredProject.map((project: Project) => (
-    <div class="relative group w-full rounded-lg overflow-hidden shadow-md" id={project._createdAt}>
+    <div class="relative group w-full rounded-lg overflow-hidden shadow-md border-2 border-gray-400" id={project._createdAt}>
       <img
         class="w-full h-auto object-cover transition duration-300 group-hover:blur-xs group-hover:brightness-50"
         src=`${urlFor(project.image).url()}`
