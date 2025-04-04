@@ -4,6 +4,7 @@ interface Project {
   slug: {
     current: string,
   };
+  description: string;
   image: string;
   url: string;
   _createdAt: string;
@@ -23,17 +24,38 @@ const filteredProject = projects.sort(
   class="grid grid-cols-1 gap-10 mt-44 mb-44 md:grid-cols-2 lg:grid-cols-3"
 >
 {filteredProject.map((project: Project) => (
-    <div class="shadow-md" id={project._createdAt}>
+    <div class="relative group w-full rounded-lg overflow-hidden shadow-md" id={project._createdAt}>
       <img
-        class="w-full rounded-t-lg"
+        class="w-full h-auto object-cover transition duration-300 group-hover:blur-xs group-hover:brightness-50"
         src=`${urlFor(project.image).url()}`
         alt="project image"
       />
-      <div class="bg-primary p-4 rounded-b-lg">
-        <h2 class="text-tertiary font-medium mb-3">{project.title}</h2>
-        <li class="flex gap-4">
-          <a href=`${project.url}` target="_blank" class="text-accent text-xs font-medium border-2 border-tertiary p-2 rounded-full hover:bg-tertiary hover:text-primary">Voir le Projet</a>
-          <a href={`/projects/${project.slug.current}`} class="text-accent text-xs font-medium border-2 border-tertiary p-2 rounded-full hover:bg-tertiary hover:text-primary">En savoir plus</a>
+      <div class="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition duration-300 p-4 ">
+        <h2 class="text-primary text-lg font-semibold mb-8 md:text-sm">{project.title}</h2>
+        <li class="flex items-center gap-4">
+          <a href={`${project.url}`}
+          target="_blank"
+          class="group/btn-hover flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5"
+          >
+          <span class="p-0 group-hover/btn-hover:pr-4 transition-all duration-300">Voir le Projet</span>
+
+          <span class="hidden group-hover/btn-hover:block transition duration-300">
+            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l73.4 73.4H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h370.7l-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+            </svg>
+          </span>
+          </a>
+
+          <a href={`/projects/${project.slug.current}`} class="group/btn-hover flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5">
+
+            <span class="p-0 group-hover/btn-hover:pr-4 transition-all duration-300">En savoir plus</span>
+
+            <span class="hidden group-hover/btn-hover:block transition duration-300">
+              <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	            <path fill="currentColor" d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l73.4 73.4H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h370.7l-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
+            </svg>
+            </span>
+          </a>
         </li>
       </div>
     </div>
