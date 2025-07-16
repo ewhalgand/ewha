@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@lucide/astro':
+        specifier: ^0.525.0
+        version: 0.525.0(astro@5.5.4(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.8)(typescript@5.7.3))
       '@sanity/client':
         specifier: ^6.28.1
         version: 6.28.1
@@ -29,6 +32,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.5.3)
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -351,6 +357,11 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
+
+  '@lucide/astro@0.525.0':
+    resolution: {integrity: sha512-CjX9aJlmHg5/Io6mRSrSi3TbwRXtrV/6kwsRjv6eVhBymAA8ogq3j8YrV1PsXn1EHK9HFyzeJOhaXGm00acVLg==}
+    peerDependencies:
+      astro: ^4 || ^5
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -1063,6 +1074,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  gsap@3.13.0:
+    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
 
   h3@1.15.0:
     resolution: {integrity: sha512-OsjX4JW8J4XGgCgEcad20pepFQWnuKH+OwkCJjogF3C+9AZ1iYdtB4hX6vAb5DskBiu5ljEXqApINjR8CqoCMQ==}
@@ -2270,6 +2284,10 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
+  '@lucide/astro@0.525.0(astro@5.5.4(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.8)(typescript@5.7.3))':
+    dependencies:
+      astro: 5.5.4(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.34.8)(typescript@5.7.3)
+
   '@oslojs/encoding@1.1.0': {}
 
   '@rollup/pluginutils@5.1.4(rollup@4.34.8)':
@@ -3043,6 +3061,8 @@ snapshots:
   gopd@1.2.0: {}
 
   graceful-fs@4.2.11: {}
+
+  gsap@3.13.0: {}
 
   h3@1.15.0:
     dependencies:
