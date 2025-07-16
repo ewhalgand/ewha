@@ -24,21 +24,21 @@ const filteredProject = projects.sort(
   class="grid grid-cols-1 gap-10 mt-44 mb-44 md:grid-cols-2 lg:grid-cols-3"
 >
 {filteredProject.map((project: Project) => (
-    <div class="relative group w-full rounded-lg overflow-hidden shadow-md border-2 border-secondary" id={project._createdAt}>
+    <div class="relative group w-full rounded-lg overflow-hidden shadow-md border-2 border-secondary bg-gray-100 lg:bg-transparent" id={project._createdAt}>
       <img
-        class="w-full h-auto object-cover transition duration-300 group-hover:blur-xs group-hover:brightness-50"
+        class="w-full h-auto object-cover lg:transition lg:duration-300 lg:group-hover:blur-xs lg:group-hover:brightness-50"
         src=`${urlFor(project.image).url()}`
-        alt="project image"
+        alt="presentation project"
       />
-      <div class="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition duration-300 p-4 ">
-        <h2 class="text-primary text-lg font-semibold mb-8 md:text-sm">{project.title}</h2>
+      <div class="flex flex-col justify-center items-center text-center p-2 lg:absolute lg:inset-0 lg:opacity-0 lg:group-hover:opacity-100 lg:transition log:duration-300 lg:p-4">
+        <h2 class="text-accent text-sm sm:text-lg font-semibold mb-8 md:text-sm lg:text-primary">{project.title}</h2>
         <li class="flex items-center gap-4">
           <a href={`${project.url}`}
           target="_blank"
-          class="flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5"
+          class="flex items-center text-accent text-xs font-medium bg-primary px-2 py-1.5 sm:px-4 sm:py-2 md:px-2 md:py-1.5 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200"
           >Voir le Projet</a>
 
-          <a href={`/projects/${project.slug.current}`} class="flex items-center text-accent text-xs font-medium bg-primary px-4 py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5">
+          <a href={`/projects/${project.slug.current}`} class="flex items-center text-accent text-xs font-medium bg-primary px-2 py-1.5 sm:px-4 sm:py-2 rounded-full border-2 border-tertiary hover:bg-tertiary hover:text-primary hover:border-primary transition duration-200 md:px-2 md:py-1.5">
           En savoir plus
           </a>
         </li>
